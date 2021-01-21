@@ -3,14 +3,15 @@ object Fm_Window_Main: TFm_Window_Main
   Top = 0
   BorderStyle = bsSingle
   Caption = 'F-14 Tomcat Weight Calc'
-  ClientHeight = 317
-  ClientWidth = 360
+  ClientHeight = 495
+  ClientWidth = 593
   Color = clScrollBar
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
+  GlassFrame.Enabled = True
   Icon.Data = {
     0000010006000000000001002000282004006600000080800000010020002808
     01008E200400404000000100200028420000B62805003030000001002000A825
@@ -11578,105 +11579,134 @@ object Fm_Window_Main: TFm_Window_Main
     0000000000000000000000000000000000000000000000000000000000000000
     00000000000000000000000000000000000000000000}
   OldCreateOrder = False
+  ShowHint = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Lb_Info_1: TLabel
-    Left = 8
+    Left = 7
     Top = 11
     Width = 71
     Height = 13
     Caption = 'Select Version:'
   end
   object Lb_Station_1A: TLabel
-    Left = 25
-    Top = 49
+    Left = 256
+    Top = 11
     Width = 54
     Height = 13
     Caption = 'Station 1A:'
   end
   object Lb_Station_2B: TLabel
-    Left = 25
-    Top = 76
+    Left = 257
+    Top = 38
     Width = 53
     Height = 13
     Caption = 'Station 1B:'
   end
   object Lb_Station_2: TLabel
-    Left = 25
-    Top = 103
+    Left = 263
+    Top = 65
     Width = 47
     Height = 13
     Caption = 'Station 2:'
   end
   object Lb_Station_3: TLabel
-    Left = 25
-    Top = 130
+    Left = 263
+    Top = 92
     Width = 47
     Height = 13
     Caption = 'Station 3:'
   end
   object Lb_Station_4: TLabel
-    Left = 25
-    Top = 157
+    Left = 263
+    Top = 119
     Width = 47
     Height = 13
     Caption = 'Station 4:'
   end
   object Lb_Station_5: TLabel
-    Left = 25
-    Top = 184
+    Left = 263
+    Top = 146
     Width = 47
     Height = 13
     Caption = 'Station 5:'
   end
   object Lb_Station_6: TLabel
-    Left = 25
-    Top = 211
+    Left = 263
+    Top = 173
     Width = 47
     Height = 13
     Caption = 'Station 6:'
   end
   object Lb_Station_7: TLabel
-    Left = 25
-    Top = 238
+    Left = 263
+    Top = 200
     Width = 47
     Height = 13
     Caption = 'Station 7:'
   end
   object Lb_Station_8B: TLabel
-    Left = 25
-    Top = 265
+    Left = 257
+    Top = 227
     Width = 53
     Height = 13
     Caption = 'Station 8B:'
   end
   object Lb_Station_8A: TLabel
-    Left = 24
-    Top = 292
+    Left = 257
+    Top = 254
     Width = 54
     Height = 13
     Caption = 'Station 8A:'
   end
+  object Lb_FuelWeight: TLabel
+    Left = 9
+    Top = 49
+    Width = 61
+    Height = 13
+    Caption = 'Fuel Weight:'
+  end
+  object Lb_FuelPercent: TLabel
+    Left = 203
+    Top = 78
+    Width = 17
+    Height = 13
+    Caption = '0%'
+  end
+  object Lb_Info_2: TLabel
+    Left = 13
+    Top = 254
+    Width = 65
+    Height = 13
+    Caption = 'Total Weight:'
+  end
   object Cb_AircraftType: TComboBox
-    Left = 85
+    Left = 84
     Top = 8
     Width = 101
     Height = 21
     Style = csDropDownList
     Color = clSilver
+    ItemIndex = 0
     TabOrder = 0
+    Text = 'F-14B'
+    OnChange = Cb_AircraftTypeChange
     Items.Strings = (
       'F-14B'
       'F-14A')
   end
   object Cb_Station_1A: TComboBox
-    Left = 85
-    Top = 46
+    Left = 316
+    Top = 8
     Width = 268
     Height = 21
     Style = csDropDownList
     Color = clSilver
+    ItemIndex = 0
     TabOrder = 1
+    Text = 'Empty'
+    OnChange = Cb_Station_1AChange
     Items.Strings = (
       'Empty'
       'AIM-9L'
@@ -11684,14 +11714,17 @@ object Fm_Window_Main: TFm_Window_Main
       'AN/ASQ-T50 Pod')
   end
   object Cb_Station_1B: TComboBox
-    Left = 84
-    Top = 73
+    Left = 317
+    Top = 35
     Width = 268
     Height = 21
     Style = csDropDownList
     Color = clSilver
     DropDownCount = 32
-    TabOrder = 2
+    ItemIndex = 0
+    TabOrder = 3
+    Text = 'Empty'
+    OnChange = Cb_Station_1BChange
     Items.Strings = (
       'Empty'
       'AIM-9L'
@@ -11710,28 +11743,36 @@ object Fm_Window_Main: TFm_Window_Main
       '4 ZUNI MK 71 x2')
   end
   object Cb_Station_2: TComboBox
-    Left = 84
-    Top = 100
+    Left = 317
+    Top = 62
     Width = 268
     Height = 21
     Style = csDropDownList
     Color = clSilver
     DropDownCount = 32
-    TabOrder = 3
+    ItemIndex = 0
+    TabOrder = 4
+    Text = 'Empty'
+    OnChange = Cb_Station_2Change
     Items.Strings = (
+      'Empty'
       'Fuel tank 300 gal'
       'Fuel tank 300 gal (empty)')
   end
   object Cb_Station_3: TComboBox
-    Left = 84
-    Top = 127
+    Left = 316
+    Top = 89
     Width = 268
     Height = 21
     Style = csDropDownList
     Color = clSilver
     DropDownCount = 23
-    TabOrder = 4
+    ItemIndex = 0
+    TabOrder = 5
+    Text = 'Empty'
+    OnChange = Cb_Station_3Change
     Items.Strings = (
+      'Empty'
       'AIM-7M'
       'AIM-54A-Mk47'
       'AIM-54A-Mk60'
@@ -11757,95 +11798,209 @@ object Fm_Window_Main: TFm_Window_Main
       '4 ZUNI MK 71 x2')
   end
   object Cb_Station_4: TComboBox
-    Left = 85
-    Top = 154
+    Left = 316
+    Top = 116
     Width = 268
     Height = 21
     Style = csDropDownList
     Color = clSilver
     DropDownCount = 32
-    TabOrder = 5
+    ItemIndex = 0
+    TabOrder = 6
+    Text = 'Empty'
+    OnChange = Cb_Station_4Change
     Items.Strings = (
-      'F-14B'#11
-      'F-14A')
+      'Empty'
+      'AIM-7M'
+      'AIM-54A-Mk47'
+      'AIM-54A-Mk60'
+      'AIM-54C-Mk47'
+      'ADM-141A'
+      'BDU-33 x3'
+      'BDU-33 x3 MAK79'
+      'GBU-12'
+      'GBU-16'
+      'MK-20'
+      'MK-81 x3'
+      'MK-82'
+      'MK-82 x3'
+      'MK-82 AIR'
+      'MK-82 AIR x3'
+      'MK-82 SnakeEye'
+      'MK-82 SnakeEye x3'
+      'Mk-83'
+      'Mk-84'
+      'SUU-25 * 8 LUU-2 x2')
   end
   object Cb_Station_5: TComboBox
-    Left = 85
-    Top = 181
+    Left = 316
+    Top = 143
     Width = 268
     Height = 21
     Style = csDropDownList
     Color = clSilver
     DropDownCount = 32
-    TabOrder = 6
+    ItemIndex = 0
+    TabOrder = 7
+    Text = 'Empty'
+    OnChange = Cb_Station_5Change
     Items.Strings = (
-      'F-14B'#11
-      'F-14A')
+      'Empty'
+      'AIM-7M'
+      'AIM-54A-Mk47'
+      'AIM-54A-Mk60'
+      'AIM-54C-Mk47'
+      'ADM-141A'
+      'BDU-33 x3'
+      'BDU-33 x3 MAK79'
+      'GBU-12'
+      'GBU-16'
+      'MK-20'
+      'MK-81 x3'
+      'MK-82'
+      'MK-82 x3'
+      'MK-82 AIR'
+      'MK-82 AIR x3'
+      'MK-82 SnakeEye'
+      'MK-82 SnakeEye x3'
+      'MK-83'
+      'MK-84'
+      'SUU-25 * 8 LUU-2 x2')
   end
   object Cb_Station_6: TComboBox
-    Left = 85
-    Top = 208
+    Left = 316
+    Top = 170
     Width = 268
     Height = 21
     Style = csDropDownList
     Color = clSilver
     DropDownCount = 32
-    TabOrder = 7
+    ItemIndex = 0
+    TabOrder = 8
+    Text = 'Empty'
+    OnChange = Cb_Station_6Change
     Items.Strings = (
-      'F-14B'#11
-      'F-14A')
+      'Empty'
+      'AIM-7M'
+      'AIM-54A-Mk47'
+      'AIM-54A-Mk60'
+      'AIM-54C-Mk47'
+      'ADM-141A'
+      'BDU-33 x3'
+      'BDU-33 x4'
+      'GBU-10'
+      'GBU-12'
+      'GBU-16'
+      'MK-20'
+      'MK-81 x4'
+      'MK-82'
+      'MK-82 x4'
+      'MK-82 AIR'
+      'MK-82 AIR x4'
+      'MK-82 SnakeEye'
+      'MK-82 SnakeEye x4'
+      'MK-83'
+      'MK-83 x3'
+      'Mk-84'
+      '4 ZUNI MK71')
   end
   object Cb_Station_7: TComboBox
-    Left = 85
-    Top = 235
+    Left = 316
+    Top = 197
     Width = 268
     Height = 21
     Style = csDropDownList
     Color = clSilver
     DropDownCount = 32
-    TabOrder = 8
+    ItemIndex = 0
+    TabOrder = 9
+    Text = 'Empty'
+    OnChange = Cb_Station_7Change
     Items.Strings = (
+      'Empty'
       'Fuel tank 300 gal'
       'Fuel tank 300 gal (empty)')
   end
   object Cb_Station_8B: TComboBox
-    Left = 85
-    Top = 262
+    Left = 316
+    Top = 224
     Width = 268
     Height = 21
     Style = csDropDownList
     Color = clSilver
     DropDownCount = 32
-    TabOrder = 9
+    ItemIndex = 0
+    TabOrder = 10
+    Text = 'Empty'
+    OnChange = Cb_Station_8BChange
     Items.Strings = (
-      'AIM-9L'#11
-      'AIM-9M'#11
-      'AIM-7M'#11
-      'AIM-54A-Mk47'#11
-      'AIM-54A-Mk60'#11
-      'AIM-54C-Mk47'#11
-      'BDU-33 x3'#11
-      'MK-20 x3'#11
-      'MK-81 x2'#11
-      'MK-82 x2'#11
-      'MK-62 AIR x2'#11
-      'MK-82 SnakeEye x2'#11
-      'MK-84'#11
-      '4 ZUNI MK 71 x2'#11
+      'Empty'
+      'AIM-9L'
+      'AIM-9M'
+      'AIM-7M'
+      'AIM-54A-Mk47'
+      'AIM-54A-Mk60'
+      'AIM-54C-Mk47'
+      'BDU-33 x3'
+      'MK-20 x3'
+      'MK-81 x2'
+      'MK-82 x2'
+      'MK-62 AIR x2'
+      'MK-82 SnakeEye x2'
+      'MK-84'
+      '4 ZUNI MK 71 x2'
       'LANTIRN TGP')
   end
   object Cb_Station_8A: TComboBox
-    Left = 85
-    Top = 289
+    Left = 317
+    Top = 251
     Width = 268
     Height = 21
     Style = csDropDownList
     Color = clSilver
     DropDownCount = 32
-    TabOrder = 10
+    ItemIndex = 0
+    TabOrder = 11
+    Text = 'Empty'
+    OnChange = Cb_Station_8AChange
     Items.Strings = (
+      'Empty'
       'AIM-9L'
       'AIM-9M'
       'AN/ASQ-T50 Pod')
+  end
+  object Tb_Fuel: TTrackBar
+    Left = 64
+    Top = 62
+    Width = 141
+    Height = 40
+    DoubleBuffered = False
+    LineSize = 5
+    Max = 100
+    ParentDoubleBuffered = False
+    ParentShowHint = False
+    Frequency = 5
+    PositionToolTip = ptLeft
+    ShowHint = False
+    TabOrder = 2
+    ThumbLength = 25
+    TickMarks = tmTopLeft
+    TickStyle = tsManual
+    OnChange = Tb_FuelChange
+  end
+  object Ed_FuelWeight: TEdit
+    Left = 76
+    Top = 46
+    Width = 121
+    Height = 21
+    TabOrder = 12
+    Text = '0 Lbs'
+  end
+  object Ed_Totalweight: TEdit
+    Left = 84
+    Top = 251
+    Width = 121
+    Height = 21
+    TabOrder = 13
   end
 end
