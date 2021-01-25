@@ -11579,16 +11579,15 @@ object Fm_Window_Main: TFm_Window_Main
     0000000000000000000000000000000000000000000000000000000000000000
     00000000000000000000000000000000000000000000}
   OldCreateOrder = False
-  ShowHint = False
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Lb_Info_1: TLabel
     Left = 7
     Top = 11
-    Width = 71
+    Width = 72
     Height = 13
-    Caption = 'Select Version:'
+    Caption = 'Select Aircraft:'
   end
   object Lb_Station_1A: TLabel
     Left = 256
@@ -11661,15 +11660,15 @@ object Fm_Window_Main: TFm_Window_Main
     Caption = 'Station 8A:'
   end
   object Lb_FuelWeight: TLabel
-    Left = 9
-    Top = 49
+    Left = 17
+    Top = 38
     Width = 61
     Height = 13
     Caption = 'Fuel Weight:'
   end
   object Lb_FuelPercent: TLabel
-    Left = 203
-    Top = 78
+    Left = 211
+    Top = 70
     Width = 17
     Height = 13
     Caption = '0%'
@@ -11682,9 +11681,9 @@ object Fm_Window_Main: TFm_Window_Main
     Caption = 'Total Weight:'
   end
   object Cb_AircraftType: TComboBox
-    Left = 84
+    Left = 85
     Top = 8
-    Width = 101
+    Width = 120
     Height = 21
     Style = csDropDownList
     Color = clSilver
@@ -11970,8 +11969,8 @@ object Fm_Window_Main: TFm_Window_Main
       'AN/ASQ-T50 Pod')
   end
   object Tb_Fuel: TTrackBar
-    Left = 64
-    Top = 62
+    Left = 72
+    Top = 57
     Width = 141
     Height = 40
     DoubleBuffered = False
@@ -11989,10 +11988,11 @@ object Fm_Window_Main: TFm_Window_Main
     OnChange = Tb_FuelChange
   end
   object Ed_FuelWeight: TEdit
-    Left = 76
-    Top = 46
+    Left = 84
+    Top = 35
     Width = 121
     Height = 21
+    ReadOnly = True
     TabOrder = 12
     Text = '0 Lbs'
   end

@@ -53,7 +53,12 @@ type
     { Private-Deklarationen }
     F14BWEIGHT,F14AWEIGHT, Aim9L, Aim9M, Aim7M, Aim54AMk47, Aim54AMk60, Aim54CMk47, Mk81, Mk82, Mk82SnakeEye, Mk82AIR, Mk83, GBU10, Mk84, Mk20, BDU33, ZUNIMk71, GBU12, GBU24, GBU16, ADM141A, fueltankfull, fueltankempty, TCTSPod, fuel, fuelinput : Integer;
     weighttotal : Real;
+
+    // Procedures
     procedure CalculateWeight;
+
+
+
   public
     { Public-Deklarationen }
   end;
@@ -62,9 +67,7 @@ var
   Fm_Window_Main: TFm_Window_Main;
 
 implementation
-
 {$R *.dfm}
-
 
 // On Change calling the "Calculate Weight" procedure.
 procedure TFm_Window_Main.Cb_AircraftTypeChange(Sender: TObject);
@@ -162,8 +165,6 @@ end;
 
 
 
-
-
 // === private ===
 
 
@@ -188,19 +189,27 @@ weighttotal := weighttotal +   (16200*((a/100)));
 
 //Station 1A weight.
 case Cb_Station_1A.ItemIndex of
- 1: begin  weighttotal := weighttotal + (1*AIM9L)  end;
- 2: begin  weighttotal := weighttotal + (1*AIM9M)  end;
- 3: begin  weighttotal := weighttotal + (1*TCTSPod)end;
- 4: begin  weighttotal := weighttotal +
- 5: begin  weighttotal := weighttotal +
- 6: begin  weighttotal := weighttotal +
- 7: begin  weighttotal := weighttotal +
- 8: begin  weighttotal := weighttotal +
- 9: begin  weighttotal := weighttotal +
- 10:begin  weighttotal := weighttotal +
+ 1  : begin  weighttotal := weighttotal + (1*AIM9L)  end;
+ 2  : begin  weighttotal := weighttotal + (1*AIM9M)  end;
+ 3  : begin  weighttotal := weighttotal + (1*TCTSPod)end;
+end;
+case Cb_Station_1B.ItemIndex of
+ 1  : begin  weighttotal := weighttotal + (1*AIM9L)       end;
+ 2  : begin  weighttotal := weighttotal + (1*AIM9M)       end;
+ 3  : begin  weighttotal := weighttotal + (1*AIM7M)       end;
+ 4  : begin  weighttotal := weighttotal + (1*AIM54AMk47)  end;
+ 5  : begin  weighttotal := weighttotal + (1*Aim54AMk60)  end;
+ 6  : begin  weighttotal := weighttotal + (1*Aim54CMk47)  end;
+ 7  : begin  weighttotal := weighttotal + (3*BDU33)       end;
+ 8  : begin  weighttotal := weighttotal + (   end;
+ 9  : begin  weighttotal := weighttotal +     end;
+ 10 : begin  weighttotal := weighttotal +     end;
+ 11 : begin  weighttotal := weighttotal +     end;
+ 12 : begin  weighttotal := weighttotal +     end;
+ 13 : begin  weighttotal := weighttotal +     end;
+ 14 : begin  weighttotal := weighttotal +     end;
 
 end;
-
 
 
 
