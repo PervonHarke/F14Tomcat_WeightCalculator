@@ -29,7 +29,8 @@ All the weights that I used are listed here. If any of them are not accurate ple
 |MK-20 | 615|
 |BDU-33 | 160|
 |BDU-33 Mk71 | --- |
-|ZUNI MK71 | 293| 
+|ZUNI MK71 | 293|
+|SUU-25 * 8 LUU-2 | 260| 
 |GBU-12 | 732|
 |GBU-10 | 1369|
 |GBU-16 | 2441|
