@@ -28,6 +28,7 @@ All the weights that I used are listed here. If any of them are not accurate ple
 |MK-84 | 2097|
 |MK-20 | 615|
 |BDU-33 | 160|
+|BDU-33 Mk71 | --- |
 |ZUNI MK71 | 293| 
 |GBU-12 | 732|
 |GBU-10 | 1369|
