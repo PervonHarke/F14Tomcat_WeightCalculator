@@ -1,5 +1,5 @@
 # F14Tomcat_WeightCalculator
-Prob bad code, written by me. All the code that is written from me is in `mF14weightcalculator.pas`
+Prob bad code and very basic code, written by me. All the code that is written from me is in `mF14weightcalculator.pas`
 
 Is also work in progress and atm only works partially. 
 The programm istelf has slight inaccuracies but that should not affect the decissions made based on the results the programm gave you. 
