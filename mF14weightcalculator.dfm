@@ -1,10 +1,11 @@
 object Fm_Window_Main: TFm_Window_Main
   Left = 0
   Top = 0
+  BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
-  Caption = 'F-14 Tomcat Weight Calc'
-  ClientHeight = 495
-  ClientWidth = 593
+  Caption = 'F-14 Weightcalculator'
+  ClientHeight = 294
+  ClientWidth = 583
   Color = clScrollBar
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11579,109 +11580,149 @@ object Fm_Window_Main: TFm_Window_Main
     0000000000000000000000000000000000000000000000000000000000000000
     00000000000000000000000000000000000000000000}
   OldCreateOrder = False
+  Position = poMainFormCenter
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Lb_Info_1: TLabel
-    Left = 7
+    Left = 14
     Top = 11
     Width = 72
     Height = 13
     Caption = 'Select Aircraft:'
   end
   object Lb_Station_1A: TLabel
-    Left = 256
+    Left = 250
     Top = 11
     Width = 54
     Height = 13
     Caption = 'Station 1A:'
   end
   object Lb_Station_2B: TLabel
-    Left = 257
+    Left = 251
     Top = 38
     Width = 53
     Height = 13
     Caption = 'Station 1B:'
   end
   object Lb_Station_2: TLabel
-    Left = 263
+    Left = 257
     Top = 65
     Width = 47
     Height = 13
     Caption = 'Station 2:'
   end
   object Lb_Station_3: TLabel
-    Left = 263
+    Left = 257
     Top = 92
     Width = 47
     Height = 13
     Caption = 'Station 3:'
   end
   object Lb_Station_4: TLabel
-    Left = 263
+    Left = 257
     Top = 119
     Width = 47
     Height = 13
     Caption = 'Station 4:'
   end
   object Lb_Station_5: TLabel
-    Left = 263
+    Left = 257
     Top = 146
     Width = 47
     Height = 13
     Caption = 'Station 5:'
   end
   object Lb_Station_6: TLabel
-    Left = 263
+    Left = 257
     Top = 173
     Width = 47
     Height = 13
     Caption = 'Station 6:'
   end
   object Lb_Station_7: TLabel
-    Left = 263
+    Left = 257
     Top = 200
     Width = 47
     Height = 13
     Caption = 'Station 7:'
   end
   object Lb_Station_8B: TLabel
-    Left = 257
+    Left = 251
     Top = 227
     Width = 53
     Height = 13
     Caption = 'Station 8B:'
   end
   object Lb_Station_8A: TLabel
-    Left = 257
+    Left = 251
     Top = 254
     Width = 54
     Height = 13
     Caption = 'Station 8A:'
   end
   object Lb_FuelWeight: TLabel
-    Left = 17
+    Left = 25
     Top = 38
     Width = 61
     Height = 13
     Caption = 'Fuel Weight:'
   end
   object Lb_FuelPercent: TLabel
-    Left = 211
+    Left = 219
     Top = 70
     Width = 17
     Height = 13
     Caption = '0%'
   end
   object Lb_Info_2: TLabel
-    Left = 13
+    Left = 11
     Top = 254
-    Width = 65
+    Width = 75
     Height = 13
     Caption = 'Total Weight:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Lb_Info_3: TLabel
+    Left = 7
+    Top = 119
+    Width = 79
+    Height = 13
+    Caption = 'Gun Ammuniton:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Lb_GunPercent: TLabel
+    Left = 219
+    Top = 151
+    Width = 17
+    Height = 13
+    Caption = '0%'
+  end
+  object Lb_Info_4: TLabel
+    Left = 470
+    Top = 278
+    Width = 105
+    Height = 11
+    Caption = 'made by Per_von_Harke'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -9
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
   end
   object Cb_AircraftType: TComboBox
-    Left = 85
+    Left = 92
     Top = 8
     Width = 120
     Height = 21
@@ -11696,14 +11737,14 @@ object Fm_Window_Main: TFm_Window_Main
       'F-14A')
   end
   object Cb_Station_1A: TComboBox
-    Left = 316
+    Left = 310
     Top = 8
     Width = 268
     Height = 21
     Style = csDropDownList
     Color = clSilver
     ItemIndex = 0
-    TabOrder = 1
+    TabOrder = 3
     Text = 'Empty'
     OnChange = Cb_Station_1AChange
     Items.Strings = (
@@ -11713,7 +11754,7 @@ object Fm_Window_Main: TFm_Window_Main
       'AN/ASQ-T50 Pod')
   end
   object Cb_Station_1B: TComboBox
-    Left = 317
+    Left = 311
     Top = 35
     Width = 268
     Height = 21
@@ -11721,7 +11762,7 @@ object Fm_Window_Main: TFm_Window_Main
     Color = clSilver
     DropDownCount = 32
     ItemIndex = 0
-    TabOrder = 3
+    TabOrder = 4
     Text = 'Empty'
     OnChange = Cb_Station_1BChange
     Items.Strings = (
@@ -11733,7 +11774,7 @@ object Fm_Window_Main: TFm_Window_Main
       'AIM-54A-Mk60'
       'AIM-54C-Mk47'
       'BDU-33 x3'
-      'MK-20 x3'
+      'MK-20 x2'
       'MK-81 x2'
       'MK-82 x2'
       'MK-62 AIR x2'
@@ -11742,7 +11783,7 @@ object Fm_Window_Main: TFm_Window_Main
       '4 ZUNI MK 71 x2')
   end
   object Cb_Station_2: TComboBox
-    Left = 317
+    Left = 311
     Top = 62
     Width = 268
     Height = 21
@@ -11750,7 +11791,7 @@ object Fm_Window_Main: TFm_Window_Main
     Color = clSilver
     DropDownCount = 32
     ItemIndex = 0
-    TabOrder = 4
+    TabOrder = 5
     Text = 'Empty'
     OnChange = Cb_Station_2Change
     Items.Strings = (
@@ -11759,15 +11800,15 @@ object Fm_Window_Main: TFm_Window_Main
       'Fuel tank 300 gal (empty)')
   end
   object Cb_Station_3: TComboBox
-    Left = 316
+    Left = 310
     Top = 89
     Width = 268
     Height = 21
     Style = csDropDownList
     Color = clSilver
-    DropDownCount = 23
+    DropDownCount = 24
     ItemIndex = 0
-    TabOrder = 5
+    TabOrder = 6
     Text = 'Empty'
     OnChange = Cb_Station_3Change
     Items.Strings = (
@@ -11797,7 +11838,7 @@ object Fm_Window_Main: TFm_Window_Main
       '4 ZUNI MK 71 x2')
   end
   object Cb_Station_4: TComboBox
-    Left = 316
+    Left = 310
     Top = 116
     Width = 268
     Height = 21
@@ -11805,7 +11846,7 @@ object Fm_Window_Main: TFm_Window_Main
     Color = clSilver
     DropDownCount = 32
     ItemIndex = 0
-    TabOrder = 6
+    TabOrder = 7
     Text = 'Empty'
     OnChange = Cb_Station_4Change
     Items.Strings = (
@@ -11832,7 +11873,7 @@ object Fm_Window_Main: TFm_Window_Main
       'SUU-25 * 8 LUU-2 x2')
   end
   object Cb_Station_5: TComboBox
-    Left = 316
+    Left = 310
     Top = 143
     Width = 268
     Height = 21
@@ -11840,7 +11881,7 @@ object Fm_Window_Main: TFm_Window_Main
     Color = clSilver
     DropDownCount = 32
     ItemIndex = 0
-    TabOrder = 7
+    TabOrder = 8
     Text = 'Empty'
     OnChange = Cb_Station_5Change
     Items.Strings = (
@@ -11867,7 +11908,7 @@ object Fm_Window_Main: TFm_Window_Main
       'SUU-25 * 8 LUU-2 x2')
   end
   object Cb_Station_6: TComboBox
-    Left = 316
+    Left = 310
     Top = 170
     Width = 268
     Height = 21
@@ -11875,7 +11916,7 @@ object Fm_Window_Main: TFm_Window_Main
     Color = clSilver
     DropDownCount = 32
     ItemIndex = 0
-    TabOrder = 8
+    TabOrder = 9
     Text = 'Empty'
     OnChange = Cb_Station_6Change
     Items.Strings = (
@@ -11904,7 +11945,7 @@ object Fm_Window_Main: TFm_Window_Main
       '4 ZUNI MK71')
   end
   object Cb_Station_7: TComboBox
-    Left = 316
+    Left = 310
     Top = 197
     Width = 268
     Height = 21
@@ -11912,7 +11953,7 @@ object Fm_Window_Main: TFm_Window_Main
     Color = clSilver
     DropDownCount = 32
     ItemIndex = 0
-    TabOrder = 9
+    TabOrder = 10
     Text = 'Empty'
     OnChange = Cb_Station_7Change
     Items.Strings = (
@@ -11921,7 +11962,7 @@ object Fm_Window_Main: TFm_Window_Main
       'Fuel tank 300 gal (empty)')
   end
   object Cb_Station_8B: TComboBox
-    Left = 316
+    Left = 310
     Top = 224
     Width = 268
     Height = 21
@@ -11929,7 +11970,7 @@ object Fm_Window_Main: TFm_Window_Main
     Color = clSilver
     DropDownCount = 32
     ItemIndex = 0
-    TabOrder = 10
+    TabOrder = 11
     Text = 'Empty'
     OnChange = Cb_Station_8BChange
     Items.Strings = (
@@ -11951,7 +11992,7 @@ object Fm_Window_Main: TFm_Window_Main
       'LANTIRN TGP')
   end
   object Cb_Station_8A: TComboBox
-    Left = 317
+    Left = 311
     Top = 251
     Width = 268
     Height = 21
@@ -11959,7 +12000,7 @@ object Fm_Window_Main: TFm_Window_Main
     Color = clSilver
     DropDownCount = 32
     ItemIndex = 0
-    TabOrder = 11
+    TabOrder = 12
     Text = 'Empty'
     OnChange = Cb_Station_8AChange
     Items.Strings = (
@@ -11969,8 +12010,43 @@ object Fm_Window_Main: TFm_Window_Main
       'AN/ASQ-T50 Pod')
   end
   object Tb_Fuel: TTrackBar
-    Left = 72
+    Left = 80
     Top = 57
+    Width = 141
+    Height = 40
+    DoubleBuffered = False
+    LineSize = 5
+    Max = 100
+    ParentDoubleBuffered = False
+    ParentShowHint = False
+    Frequency = 5
+    PositionToolTip = ptLeft
+    ShowHint = False
+    TabOrder = 1
+    ThumbLength = 25
+    TickMarks = tmTopLeft
+    TickStyle = tsManual
+    OnChange = Tb_FuelChange
+  end
+  object Ed_FuelWeight: TEdit
+    Left = 92
+    Top = 35
+    Width = 121
+    Height = 21
+    ReadOnly = True
+    TabOrder = 14
+    Text = '0 Lbs'
+  end
+  object Ed_Totalweight: TEdit
+    Left = 92
+    Top = 251
+    Width = 121
+    Height = 21
+    TabOrder = 13
+  end
+  object Tb_GunAmmo: TTrackBar
+    Left = 80
+    Top = 138
     Width = 141
     Height = 40
     DoubleBuffered = False
@@ -11987,20 +12063,13 @@ object Fm_Window_Main: TFm_Window_Main
     TickStyle = tsManual
     OnChange = Tb_FuelChange
   end
-  object Ed_FuelWeight: TEdit
-    Left = 84
-    Top = 35
+  object Ed_GunWeight: TEdit
+    Left = 92
+    Top = 116
     Width = 121
     Height = 21
     ReadOnly = True
-    TabOrder = 12
+    TabOrder = 15
     Text = '0 Lbs'
-  end
-  object Ed_Totalweight: TEdit
-    Left = 84
-    Top = 251
-    Width = 121
-    Height = 21
-    TabOrder = 13
   end
 end

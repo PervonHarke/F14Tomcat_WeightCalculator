@@ -36,6 +36,7 @@ Coordinates=10,346,99,58
 
 [Lb_Info_1]
 Coordinates=609,278,72,58
+Visible=True
 
 [Lb_Station_6]
 Coordinates=296,278,90,58
@@ -80,9 +81,21 @@ Coordinates=10,278,102,58
 Coordinates=572,144,105,58
 
 []
-Coordinates=445,629,91,36
+Coordinates=715,1,91,36
 
 [Lb_Info_2]
-Coordinates=122,278,53,58
+Coordinates=122,278,72,58
 Visible=True
+
+[Lb_GunPercent]
+Coordinates=600,423,104,58
+
+[Tb_GunAmmo]
+Coordinates=715,56,97,36
+
+[Lb_Info_3]
+Coordinates=424,423,72,58
+
+[Ed_GunWeight]
+Coordinates=315,442,101,58
 
