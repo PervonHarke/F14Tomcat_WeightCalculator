@@ -13,6 +13,7 @@ All the weights that I used are listed here. If any of them are not accurate ple
 |---      |---           |
 |F-14B | 44040|
 |F-14A | 40104|
+|Gun Ammo | 520 |
 |AIM-9L | 190|
 |AIM-9M | 192|
 |AIM-7M | 626|
@@ -31,7 +32,7 @@ All the weights that I used are listed here. If any of them are not accurate ple
 |GBU-12 | 732|
 |GBU-10 | 1369|
 |GBU-16 | 2441|
-|GBU-24 | ----- |
+|GBU-24 | 2103 |
 |ADM-141A | 805|
 |Fueltank empty | 154|
 |Fueltank full | 2113|
