@@ -5,7 +5,7 @@ object Fm_Window_Main: TFm_Window_Main
   BorderStyle = bsSingle
   Caption = 'F-14 Weightcalculator'
   ClientHeight = 294
-  ClientWidth = 583
+  ClientWidth = 998
   Color = clScrollBar
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11737,7 +11737,7 @@ object Fm_Window_Main: TFm_Window_Main
       'F-14A')
   end
   object Cb_Station_1A: TComboBox
-    Left = 310
+    Left = 590
     Top = 8
     Width = 268
     Height = 21
@@ -11754,7 +11754,7 @@ object Fm_Window_Main: TFm_Window_Main
       'AN/ASQ-T50 Pod')
   end
   object Cb_Station_1B: TComboBox
-    Left = 311
+    Left = 590
     Top = 35
     Width = 268
     Height = 21
@@ -11783,7 +11783,7 @@ object Fm_Window_Main: TFm_Window_Main
       '4 ZUNI MK 71 x2')
   end
   object Cb_Station_2: TComboBox
-    Left = 311
+    Left = 590
     Top = 62
     Width = 268
     Height = 21
@@ -11800,7 +11800,7 @@ object Fm_Window_Main: TFm_Window_Main
       'Fuel tank 300 gal (empty)')
   end
   object Cb_Station_3: TComboBox
-    Left = 310
+    Left = 590
     Top = 89
     Width = 268
     Height = 21
@@ -11838,7 +11838,7 @@ object Fm_Window_Main: TFm_Window_Main
       '4 ZUNI MK 71 x2')
   end
   object Cb_Station_4: TComboBox
-    Left = 310
+    Left = 590
     Top = 116
     Width = 268
     Height = 21
@@ -11873,7 +11873,7 @@ object Fm_Window_Main: TFm_Window_Main
       'SUU-25 * 8 LUU-2 x2')
   end
   object Cb_Station_5: TComboBox
-    Left = 310
+    Left = 590
     Top = 143
     Width = 268
     Height = 21
@@ -11908,7 +11908,7 @@ object Fm_Window_Main: TFm_Window_Main
       'SUU-25 * 8 LUU-2 x2')
   end
   object Cb_Station_6: TComboBox
-    Left = 310
+    Left = 590
     Top = 170
     Width = 268
     Height = 21
@@ -11945,7 +11945,7 @@ object Fm_Window_Main: TFm_Window_Main
       '4 ZUNI MK71')
   end
   object Cb_Station_7: TComboBox
-    Left = 310
+    Left = 590
     Top = 197
     Width = 268
     Height = 21
@@ -11962,7 +11962,7 @@ object Fm_Window_Main: TFm_Window_Main
       'Fuel tank 300 gal (empty)')
   end
   object Cb_Station_8B: TComboBox
-    Left = 310
+    Left = 590
     Top = 224
     Width = 268
     Height = 21
@@ -11992,7 +11992,7 @@ object Fm_Window_Main: TFm_Window_Main
       'LANTIRN TGP')
   end
   object Cb_Station_8A: TComboBox
-    Left = 311
+    Left = 591
     Top = 251
     Width = 268
     Height = 21

@@ -20,16 +20,7 @@ type
     Lb_Station_7: TLabel;
     Lb_Station_8B: TLabel;
     Lb_Station_8A: TLabel;
-    Cb_Station_1A: TComboBox;
-    Cb_Station_1B: TComboBox;
-    Cb_Station_2: TComboBox;
-    Cb_Station_3: TComboBox;
-    Cb_Station_4: TComboBox;
-    Cb_Station_5: TComboBox;
-    Cb_Station_6: TComboBox;
-    Cb_Station_7: TComboBox;
-    Cb_Station_8B: TComboBox;
-    Cb_Station_8A: TComboBox;
+
     Tb_Fuel: TTrackBar;
     Lb_FuelWeight: TLabel;
     Ed_FuelWeight: TEdit;
@@ -55,13 +46,34 @@ type
     procedure Cb_Station_8AChange(Sender: TObject);
     procedure Cb_Station_8BChange(Sender: TObject);
   private
+
+
+
+    //ComboBox declaration
+    Cb_Station_1A: TComboBox;
+    Cb_Station_1B: TComboBox;
+    Cb_Station_2: TComboBox;
+    Cb_Station_3: TComboBox;
+    Cb_Station_4: TComboBox;
+    Cb_Station_5: TComboBox;
+    Cb_Station_6: TComboBox;
+    Cb_Station_7: TComboBox;
+    Cb_Station_8B: TComboBox;
+    Cb_Station_8A: TComboBox;
+
+
+   {public}
     // Variables
     F14BWEIGHT,F14AWEIGHT, Aim9L, GunTotal, SUU258LUU2,  BDU33MAK79 , Aim9M, Aim7M, Aim54AMk47, Aim54AMk60, Aim54CMk47, Mk81, Mk82, Mk82SnakeEye, Mk82AIR, Mk83, GBU10, Mk84, Mk20, BDU33, ZUNIMk71, GBU12, GBU24, GBU16, ADM141A, fueltankfull, fueltankempty, TCTSPod, fuel, fuelinput : Integer;
     weighttotal : Real;
 
     // Procedures
     procedure CalculateWeight;
+
+
+
   public
+   {public}
   end;
 
 var
@@ -124,6 +136,320 @@ end;
 //Setting up all the variables with (hopefully xd) correct values
 procedure TFm_Window_Main.FormCreate(Sender: TObject);
 begin
+
+//Creating all ComboBoxes
+ // Station 1A
+ Cb_Station_1A := TComboBox.Create(Fm_Window_Main);
+ Cb_Station_1A.Parent := Fm_Window_Main;
+// Cb_Station_1A.OnChange := CalculateWeight;
+with Cb_Station_1A do
+begin
+  SetBounds(388,10,335,21);
+  Style := csDropDownList;
+  DropDownCount := 8;
+  Color := clSilver;
+
+
+  //Adding all Items
+  Items.Add('Empty');
+  Items.Add('AIM-9L');
+  Items.Add('AIM-9M');
+  Items.Add('AN/ASQ-T50 Po');
+
+  ItemIndex := 0;
+end;
+
+
+ // Station 1B
+ Cb_Station_1B := TComboBox.Create(Fm_Window_Main);
+ Cb_Station_1B.Parent := Fm_Window_Main;
+
+ with Cb_Station_1B do
+ begin
+  SetBounds(388,10+34*1,335,21);
+  Style := csDropDownList;
+  DropDownCount := 32;
+  Color := clSilver;
+
+  //Adding all Items
+  Items.Add('Empty');
+  Items.Add('Empty');
+  Items.Add('AIM-9L');
+  Items.Add('AIM-9M');
+  Items.Add('AIM-7M');
+  Items.Add('AIM-54A-Mk47');
+  Items.Add('AIM-54A-Mk60');
+  Items.Add('AIM-54C-Mk47');
+  Items.Add('BDU-33 x3');
+  Items.Add('MK-20 x2');
+  Items.Add('MK-81 x2');
+  Items.Add('MK-82 x2');
+  Items.Add('MK-62 AIR x2');
+  Items.Add('MK-82 SnakeEye x2');
+  Items.Add('MK-84');
+  Items.Add('4 ZUNI MK 71 x2');
+
+
+  ItemIndex := 0;
+ end;
+
+
+ // Station 2
+ Cb_Station_2 := TComboBox.Create(Fm_Window_Main);
+ Cb_Station_2.Parent := Fm_Window_Main;
+
+ with Cb_Station_2 do
+ begin
+  SetBounds(388,10+34*2,335,21);
+  Style := csDropDownList;
+  DropDownCount := 32;
+  Color := clSilver;
+
+  //Adding all Items
+  Items.Add('Empty');
+  Items.Add('Fuel tank 300 gal');
+  Items.Add('Fuel tank 300 gal (empty)');
+
+
+  ItemIndex := 0;
+ end;
+
+
+ // Station 3
+ Cb_Station_3 := TComboBox.Create(Fm_Window_Main);
+ Cb_Station_3.Parent := Fm_Window_Main;
+
+ with Cb_Station_3 do
+ begin
+  SetBounds(388,10+34*3,335,21);
+  Style := csDropDownList;
+  DropDownCount := 32;
+  Color := clSilver;
+
+  //Adding all Items
+  Items.Add('Empty');
+  Items.Add('AIM-7M');
+  Items.Add('AIM-54A-Mk47');
+  Items.Add('AIM-54A-Mk60');
+  Items.Add('AIM-54C-Mk47');
+  Items.Add('ADM-141A');
+  Items.Add('BDU-33 x3');
+  Items.Add('BDU-33 x4');
+  Items.Add('GBU-10');
+  Items.Add('GBU-12');
+  Items.Add('GBU-16');
+  Items.Add('GBU-24');
+  Items.Add('MK-20');
+  Items.Add('MK-81 x4');
+  Items.Add('MK-82');
+  Items.Add('MK-82 x4');
+  Items.Add('MK-82 AIR');
+  Items.Add('MK-82 AIR x4');
+  Items.Add('MK-82 SnakeEye');
+  Items.Add('MK-82 SnakeEye x4');
+  Items.Add('MK-83');
+  Items.Add('MK-83 x3');
+  Items.Add('MK-84');
+  Items.Add('4 ZUNI MK 71 x2');
+
+  ItemIndex := 0;
+ end;
+
+
+ // Station 4
+ Cb_Station_4 := TComboBox.Create(Fm_Window_Main);
+ Cb_Station_4.Parent := Fm_Window_Main;
+
+ with Cb_Station_4 do
+ begin
+  SetBounds(388,10+34*4,335,21);
+  Style := csDropDownList;
+  DropDownCount := 32;
+  Color := clSilver;
+
+  //Adding all Items
+  Items.Add('Empty');
+  Items.Add('AIM-7M');
+  Items.Add('AIM-54A-Mk47');
+  Items.Add('AIM-54A-Mk60');
+  Items.Add('AIM-54C-Mk47');
+  Items.Add('ADM-141A');
+  Items.Add('BDU-33 x3');
+  Items.Add('BDU-33 x3 MAK79');
+  Items.Add('GBU-12');
+  Items.Add('GBU-16');
+  Items.Add('MK-20');
+  Items.Add('MK-81 x3');
+  Items.Add('MK-82');
+  Items.Add('MK-82 x3');
+  Items.Add('MK-82 AIR');
+  Items.Add('MK-82 AIR x3');
+  Items.Add('MK-82 SnakeEye');
+  Items.Add('MK-82 SnakeEye x3');
+  Items.Add('Mk-83');
+  Items.Add('Mk-84');
+  Items.Add('SUU-25 * 8 LUU-2 x2');
+
+  ItemIndex := 0;
+ end;
+
+
+ // Station 5
+ Cb_Station_5 := TComboBox.Create(Fm_Window_Main);
+ Cb_Station_5.Parent := Fm_Window_Main;
+
+ with Cb_Station_5 do
+ begin
+  SetBounds(388,10+34*5,335,21);
+  Style := csDropDownList;
+  DropDownCount := 32;
+  Color := clSilver;
+
+  //Adding all Items
+  Items.Add('Empty');
+  Items.Add('AIM-7M');
+  Items.Add('AIM-54A-Mk47');
+  Items.Add('AIM-54A-Mk60');
+  Items.Add('AIM-54C-Mk47');
+  Items.Add('ADM-141A');
+  Items.Add('BDU-33 x3');
+  Items.Add('BDU-33 x3 MAK79');
+  Items.Add('GBU-12');
+  Items.Add('GBU-16');
+  Items.Add('MK-20');
+  Items.Add('MK-81 x3');
+  Items.Add('MK-82');
+  Items.Add('MK-82 x3');
+  Items.Add('MK-82 AIR');
+  Items.Add('MK-82 AIR x3');
+  Items.Add('MK-82 SnakeEye');
+  Items.Add('MK-82 SnakeEye x3');
+  Items.Add('MK-83');
+  Items.Add('MK-84');
+  Items.Add('SUU-25 * 8 LUU-2 x2');
+
+
+
+  ItemIndex := 0;
+ end;
+
+
+ // Station 6
+ Cb_Station_6 := TComboBox.Create(Fm_Window_Main);
+ Cb_Station_6.Parent := Fm_Window_Main;
+
+ with Cb_Station_6 do
+ begin
+  SetBounds(388,10+34*6,335,21);
+  Style := csDropDownList;
+  DropDownCount := 32;
+  Color := clSilver;
+
+  //Adding all Items
+  Items.Add('Empty');
+  Items.Add('AIM-7M');
+  Items.Add('AIM-54A-Mk47');
+  Items.Add('AIM-54A-Mk60');
+  Items.Add('AIM-54C-Mk47');
+  Items.Add('ADM-141A');
+  Items.Add('BDU-33 x3');
+  Items.Add('BDU-33 x4');
+  Items.Add('GBU-10');
+  Items.Add('GBU-12');
+  Items.Add('GBU-16');
+  Items.Add('MK-20');
+  Items.Add('MK-81 x4');
+  Items.Add('MK-82');
+  Items.Add('MK-82 x4');
+  Items.Add('MK-82 AIR');
+  Items.Add('MK-82 AIR x4');
+  Items.Add('MK-82 SnakeEye');
+  Items.Add('MK-82 SnakeEye x4');
+  Items.Add('MK-83');
+  Items.Add('MK-83 x3');
+  Items.Add('Mk-84');
+  Items.Add('4 ZUNI MK71');
+
+  ItemIndex := 0;
+ end;
+
+
+ // Station 7
+ Cb_Station_7 := TComboBox.Create(Fm_Window_Main);
+ Cb_Station_7.Parent := Fm_Window_Main;
+
+ with Cb_Station_7 do
+ begin
+  SetBounds(388,10+34*7,335,21);
+  Style := csDropDownList;
+  DropDownCount := 32;
+  Color := clSilver;
+
+  //Adding all Items
+  Items.Add('Empty');
+  Items.Add('Fuel tank 300 gal');
+  Items.Add('Fuel tank 300 gal (empty)');
+
+  ItemIndex := 0;
+ end;
+
+
+  // Station 8B
+ Cb_Station_8B := TComboBox.Create(Fm_Window_Main);
+ Cb_Station_8B.Parent := Fm_Window_Main;
+
+ with Cb_Station_8B do
+ begin
+  SetBounds(388,10+34*8,335,21);
+  Style := csDropDownList;
+  DropDownCount := 32;
+  Color := clSilver;
+
+  //Adding all Items
+  Items.Add('Empty');
+  Items.Add('AIM-9L');
+  Items.Add('AIM-9M');
+  Items.Add('AIM-7M');
+  Items.Add('AIM-54A-Mk47');
+  Items.Add('AIM-54A-Mk60');
+  Items.Add('AIM-54C-Mk47');
+  Items.Add('BDU-33 x3');
+  Items.Add('MK-20 x3');
+  Items.Add('MK-81 x2');
+  Items.Add('MK-82 x2');
+  Items.Add('MK-62 AIR x2');
+  Items.Add('MK-82 SnakeEye x2');
+  Items.Add('MK-84');
+  Items.Add('4 ZUNI MK 71 x2');
+  Items.Add('LANTIRN TGP');
+
+  ItemIndex := 0;
+ end;
+
+
+  // Station 8A
+ Cb_Station_8A := TComboBox.Create(Fm_Window_Main);
+ Cb_Station_8A.Parent := Fm_Window_Main;
+
+ with Cb_Station_8A do
+ begin
+  SetBounds(388,10+34*9,335,21);
+  Style := csDropDownList;
+  DropDownCount := 32;
+  Color := clSilver;
+
+  //Adding all Items
+  Items.Add('Empty');
+  Items.Add('AIM-9L');
+  Items.Add('AIM-9M');
+  Items.Add('AN/ASQ-T50 Pod');
+
+  ItemIndex := 0;
+ end;
+
+
+
+// Defining weight variables
 Aim9L         := 190;
 Aim9M         := 192;
 Aim7M         := 626;
