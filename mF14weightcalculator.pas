@@ -46,9 +46,7 @@ type
     procedure Cb_Station_8AChange(Sender: TObject);
     procedure Cb_Station_8BChange(Sender: TObject);
   private
-
-
-
+    {public}
     //ComboBox declaration
     Cb_Station_1A: TComboBox;
     Cb_Station_1B: TComboBox;
@@ -60,18 +58,11 @@ type
     Cb_Station_7: TComboBox;
     Cb_Station_8B: TComboBox;
     Cb_Station_8A: TComboBox;
-
-
-   {public}
     // Variables
     F14BWEIGHT,F14AWEIGHT, Aim9L, GunTotal, SUU258LUU2,  BDU33MAK79 , Aim9M, Aim7M, Aim54AMk47, Aim54AMk60, Aim54CMk47, Mk81, Mk82, Mk82SnakeEye, Mk82AIR, Mk83, GBU10, Mk84, Mk20, BDU33, ZUNIMk71, GBU12, GBU24, GBU16, ADM141A, fueltankfull, fueltankempty, TCTSPod, fuel, fuelinput : Integer;
     weighttotal : Real;
-
     // Procedures
     procedure CalculateWeight;
-
-
-
   public
    {public}
   end;
@@ -132,8 +123,7 @@ begin
 CalculateWeight;
 end;
 
-
-//Setting up all the variables with (hopefully xd) correct values
+// creating comboboxes and defining all variables
 procedure TFm_Window_Main.FormCreate(Sender: TObject);
 begin
 
@@ -141,7 +131,7 @@ begin
  // Station 1A
  Cb_Station_1A := TComboBox.Create(Fm_Window_Main);
  Cb_Station_1A.Parent := Fm_Window_Main;
-// Cb_Station_1A.OnChange := CalculateWeight;
+
 with Cb_Station_1A do
 begin
   SetBounds(388,10,335,21);
@@ -189,7 +179,6 @@ end;
   Items.Add('MK-84');
   Items.Add('4 ZUNI MK 71 x2');
 
-
   ItemIndex := 0;
  end;
 
@@ -209,7 +198,6 @@ end;
   Items.Add('Empty');
   Items.Add('Fuel tank 300 gal');
   Items.Add('Fuel tank 300 gal (empty)');
-
 
   ItemIndex := 0;
  end;
@@ -327,8 +315,6 @@ end;
   Items.Add('MK-83');
   Items.Add('MK-84');
   Items.Add('SUU-25 * 8 LUU-2 x2');
-
-
 
   ItemIndex := 0;
  end;
