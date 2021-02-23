@@ -153,7 +153,7 @@ end;
  // Station 1B
  Cb_Station_1B := TComboBox.Create(Fm_Window_Main);
  Cb_Station_1B.Parent := Fm_Window_Main;
-
+ Cb_Station_1B.OnChange := calculateweight;
  with Cb_Station_1B do
  begin
   SetBounds(388,10+34*1,335,21);
@@ -434,7 +434,7 @@ end;
  end;
 
 
-
+// Very likely wrong values!!
 // Defining weight variables
 Aim9L         := 190;
 Aim9M         := 192;
