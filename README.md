@@ -1,10 +1,10 @@
 # F14Tomcat_WeightCalculator
-Prob bad code and very basic code, written by me. All the code that is written from me is in `mF14weightcalculator.pas`
+Prob bad code and very basic code, written by me.
 
-Is also work in progress and atm only works partially. 
+Is also work in progress and only works partially atm.
 The programm istelf has slight inaccuracies but that should not affect the decissions made based on the results the programm gave you. 
 
-Programm written in Pascal using **Delphi from Embarcadero** to calculate their weight of the F-14B and F-14A. Intended for use while playing DCS World.
+Programm written in Pascal using **Delphi from Embarcadero** to calculate their weight of the F-14B and F-14A. **Only intended for use while playing DCS World**.
 
 ***
 ### Weight table
