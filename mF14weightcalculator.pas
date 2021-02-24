@@ -34,20 +34,7 @@ type
     Lb_Info_4: TLabel;
     procedure FormCreate(Sender: TObject);
     procedure Tb_FuelChange(Sender: TObject);
-    procedure Cb_AircraftTypeChange(Sender: TObject);
-    procedure Cb_Station_1AChange(Sender: TObject);
-    procedure Cb_Station_1BChange(Sender: TObject);
-    procedure Cb_Station_2Change(Sender: TObject);
-    procedure Cb_Station_3Change(Sender: TObject);
-    procedure Cb_Station_4Change(Sender: TObject);
-    procedure Cb_Station_5Change(Sender: TObject);
-    procedure Cb_Station_6Change(Sender: TObject);
-    procedure Cb_Station_7Change(Sender: TObject);
-    procedure Cb_Station_8AChange(Sender: TObject);
-    procedure Cb_Station_8BChange(Sender: TObject);
   private
-    {public}
-    //ComboBox declaration
     Cb_Station_1A: TComboBox;
     Cb_Station_1B: TComboBox;
     Cb_Station_2: TComboBox;
@@ -56,13 +43,13 @@ type
     Cb_Station_5: TComboBox;
     Cb_Station_6: TComboBox;
     Cb_Station_7: TComboBox;
-    Cb_Station_8B: TComboBox;
     Cb_Station_8A: TComboBox;
+    Cb_Station_8B: TComboBox;
     // Variables
     F14BWEIGHT,F14AWEIGHT, Aim9L, GunTotal, SUU258LUU2,  BDU33MAK79 , Aim9M, Aim7M, Aim54AMk47, Aim54AMk60, Aim54CMk47, Mk81, Mk82, Mk82SnakeEye, Mk82AIR, Mk83, GBU10, Mk84, Mk20, BDU33, ZUNIMk71, GBU12, GBU24, GBU16, ADM141A, fueltankfull, fueltankempty, TCTSPod, fuel, fuelinput : Integer;
     weighttotal : Real;
     // Procedures
-    procedure CalculateWeight;
+    procedure CalculateWeight (Sender : TObject);
   public
    {public}
   end;
@@ -73,55 +60,12 @@ var
 implementation
 {$R *.dfm}
 
-// On Change calling the "Calculate Weight" procedure.
-procedure TFm_Window_Main.Cb_AircraftTypeChange(Sender: TObject);
-begin
-CalculateWeight;
-end;
-procedure TFm_Window_Main.Cb_Station_1AChange(Sender: TObject);
-begin
-CalculateWeight;
-end;
-procedure TFm_Window_Main.Cb_Station_1BChange(Sender: TObject);
-begin
-CalculateWeight;
-end;
-procedure TFm_Window_Main.Cb_Station_2Change(Sender: TObject);
-begin
-CalculateWeight;
-end;
-procedure TFm_Window_Main.Cb_Station_3Change(Sender: TObject);
-begin
-CalculateWeight;
-end;
-procedure TFm_Window_Main.Cb_Station_4Change(Sender: TObject);
-begin
-CalculateWeight;
-end;
-procedure TFm_Window_Main.Cb_Station_5Change(Sender: TObject);
-begin
-CalculateWeight;
-end;
-procedure TFm_Window_Main.Cb_Station_6Change(Sender: TObject);
-begin
-CalculateWeight;
-end;
-procedure TFm_Window_Main.Cb_Station_7Change(Sender: TObject);
-begin
-CalculateWeight;
-end;
-procedure TFm_Window_Main.Cb_Station_8AChange(Sender: TObject);
-begin
-CalculateWeight;
-end;
-procedure TFm_Window_Main.Cb_Station_8BChange(Sender: TObject);
-begin
-CalculateWeight;
-end;
 procedure TFm_Window_Main.Tb_FuelChange(Sender: TObject);
 begin
-CalculateWeight;
+//CalculateWeight;
 end;
+
+
 
 // creating comboboxes and defining all variables
 procedure TFm_Window_Main.FormCreate(Sender: TObject);
@@ -131,6 +75,7 @@ begin
  // Station 1A
  Cb_Station_1A := TComboBox.Create(Fm_Window_Main);
  Cb_Station_1A.Parent := Fm_Window_Main;
+ Cb_Station_1A.OnChange := CalculateWeight;
 
 with Cb_Station_1A do
 begin
@@ -153,7 +98,8 @@ end;
  // Station 1B
  Cb_Station_1B := TComboBox.Create(Fm_Window_Main);
  Cb_Station_1B.Parent := Fm_Window_Main;
- Cb_Station_1B.OnChange := calculateweight;
+ Cb_Station_1B.OnChange := CalculateWeight;
+
  with Cb_Station_1B do
  begin
   SetBounds(388,10+34*1,335,21);
@@ -186,6 +132,7 @@ end;
  // Station 2
  Cb_Station_2 := TComboBox.Create(Fm_Window_Main);
  Cb_Station_2.Parent := Fm_Window_Main;
+ Cb_Station_2.OnChange := CalculateWeight;
 
  with Cb_Station_2 do
  begin
@@ -206,6 +153,7 @@ end;
  // Station 3
  Cb_Station_3 := TComboBox.Create(Fm_Window_Main);
  Cb_Station_3.Parent := Fm_Window_Main;
+ Cb_Station_3.OnChange := CalculateWeight;
 
  with Cb_Station_3 do
  begin
@@ -247,6 +195,7 @@ end;
  // Station 4
  Cb_Station_4 := TComboBox.Create(Fm_Window_Main);
  Cb_Station_4.Parent := Fm_Window_Main;
+ Cb_Station_4.OnChange := CalculateWeight;
 
  with Cb_Station_4 do
  begin
@@ -285,6 +234,7 @@ end;
  // Station 5
  Cb_Station_5 := TComboBox.Create(Fm_Window_Main);
  Cb_Station_5.Parent := Fm_Window_Main;
+ Cb_Station_5.OnChange := CalculateWeight;
 
  with Cb_Station_5 do
  begin
@@ -323,6 +273,7 @@ end;
  // Station 6
  Cb_Station_6 := TComboBox.Create(Fm_Window_Main);
  Cb_Station_6.Parent := Fm_Window_Main;
+ Cb_Station_6.OnChange := CalculateWeight;
 
  with Cb_Station_6 do
  begin
@@ -363,6 +314,7 @@ end;
  // Station 7
  Cb_Station_7 := TComboBox.Create(Fm_Window_Main);
  Cb_Station_7.Parent := Fm_Window_Main;
+ Cb_Station_7.OnChange := CalculateWeight;
 
  with Cb_Station_7 do
  begin
@@ -383,6 +335,7 @@ end;
   // Station 8B
  Cb_Station_8B := TComboBox.Create(Fm_Window_Main);
  Cb_Station_8B.Parent := Fm_Window_Main;
+ Cb_Station_8B.OnChange := CalculateWeight;
 
  with Cb_Station_8B do
  begin
@@ -416,6 +369,7 @@ end;
   // Station 8A
  Cb_Station_8A := TComboBox.Create(Fm_Window_Main);
  Cb_Station_8A.Parent := Fm_Window_Main;
+ Cb_Station_8A.OnChange := CalculateWeight;
 
  with Cb_Station_8A do
  begin
@@ -464,15 +418,16 @@ TCTSPod       := 139;
 F14BWeight    := 44040;
 F14AWeight    := 40104;
 GunTotal      := 520;
-CalculateWeight;
 end;
+
 
 
 // === private ===
 
 
+
 //Calculate Weight Procedure
-procedure TFm_Window_Main.CalculateWeight;
+procedure TFm_Window_Main.CalculateWeight (Sender : TObject);
 var a,b : real;
 begin
 //stopping endless addition of the weights.
@@ -496,7 +451,7 @@ Lb_GunPercent.Caption   := FloatToStr(b) + '%';
 Ed_GunWeight.Text       := FloatToStr(   round((520 * (b/100)))) + ' Lbs';
 weighttotal             := weighttotal + round((520 * (b/100)));
 
-//
+// Cb_Staitions
 // Station 1A
 case Cb_Station_1A.ItemIndex of
  1  : begin  weighttotal := weighttotal + (1*AIM9L)  end;

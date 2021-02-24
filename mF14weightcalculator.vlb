@@ -1,20 +1,8 @@
 ﻿[Lb_Station_7]
 Coordinates=119,346,90,58
 
-[Cb_Station_4]
-Coordinates=454,10,101,124
-
-[Cb_Station_1A]
-Coordinates=461,144,101,124
-
-[Cb_Station_3]
-Coordinates=10,10,101,124
-
 [Lb_Station_2]
 Coordinates=509,278,90,58
-
-[Cb_Station_1B]
-Coordinates=239,144,101,124
 
 [Lb_Station_2B]
 Coordinates=10,414,99,58
@@ -27,9 +15,6 @@ Coordinates=637,346,90,58
 
 [Lb_Station_1A]
 Coordinates=319,346,99,58
-
-[Cb_Station_5]
-Coordinates=565,10,101,124
 
 [Lb_Station_8A]
 Coordinates=10,346,99,58
@@ -44,26 +29,11 @@ Coordinates=296,278,90,58
 [Lb_Station_8B]
 Coordinates=428,346,99,58
 
-[Cb_Station_8A]
-Coordinates=232,10,101,124
-
-[Cb_Station_6]
-Coordinates=343,10,101,124
-
 [Lb_Station_4]
 Coordinates=219,346,90,58
 
-[Cb_Station_7]
-Coordinates=121,10,101,124
-
 [Cb_AircraftType]
 Coordinates=10,144,108,124
-
-[Cb_Station_2]
-Coordinates=350,144,101,124
-
-[Cb_Station_8B]
-Coordinates=128,144,101,124
 
 [Tb_Fuel]
 Coordinates=119,414,62,36
@@ -81,7 +51,7 @@ Coordinates=10,278,102,58
 Coordinates=572,144,105,58
 
 []
-Coordinates=715,1,91,36
+Coordinates=232,10,101,124
 
 [Lb_Info_2]
 Coordinates=122,278,72,58
